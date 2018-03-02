@@ -15,7 +15,7 @@
 		<% @users.each_with_index do |user, index| %>
 			<tr class='text-center'>
 				<td><h5> <%= index + 1%></h5></td>
-				<td><h5><%=user['login'] %></h5></td>
+				<td><a href="<%=user['html_url']%>" target='_blank'><h5><%=user['login'] %></h5></a></td>
 			</tr>
 		<%end%>	
 	</table>
