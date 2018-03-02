@@ -1,0 +1,30 @@
+<div class="container text-center" style="width: 70%;">
+	<div class="row">
+		<div class="col-xs-6">
+			<h2>Page Number :<%=session[:page]%></h2>		
+		</div>
+		<div class="col-xs-6" style="padding: 10px;">
+			<a href="<%=root_path %>" type="button" class="btn btn-primary">Search Others</a>		
+		</div>
+	</div> 		
+	<table class="table-bordered" style="width: 100%;">
+		<tr>	
+			<th  class="text-center">Sl No.</th>
+			<th  class="text-center">Name</th>
+		</tr>	
+		<% @users.each_with_index do |user, index| %>
+			<tr class='text-center'>
+				<td><h5> <%= index + 1%></h5></td>
+				<td><h5><%=user['login'] %></h5></td>
+			</tr>
+		<%end%>	
+	</table>
+	<nav aria-label="...">
+	  <ul class="pager">
+	  	<li><a href="<%= git_srch_first_path %>">First</a></li>
+	    <li><a href="<%= git_srch_previous_path %>">Previous</a></li>
+	    <li><a href="<%= git_srch_next_path %>">Next</a></li>
+	    <li><a href="<%= git_srch_last_path %>">Last</a></li>
+	  </ul>
+	</nav>
+</div>	

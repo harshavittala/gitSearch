@@ -1,0 +1,2 @@
+module GitSrchHelper
+end
